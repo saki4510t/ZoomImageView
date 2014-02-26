@@ -55,7 +55,6 @@ import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Matrix;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcel;
@@ -608,9 +607,12 @@ public class ZoomImageView extends ImageView {
 	public Bitmap getCurrentImage() {
 		final Bitmap offscreen = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
 		final Canvas canvas = new Canvas(offscreen);
-		Bitmap image = ((BitmapDrawable)super.getDrawable()).getBitmap();
-		canvas.drawBitmap(image, super.getImageMatrix(), null);
-		image.recycle();
+//		Bitmap image = ((BitmapDrawable)super.getDrawable()).getBitmap();
+//		canvas.drawBitmap(image, super.getImageMatrix(), null);
+//		image.recycle();
+		// modified to support drawables other than BitmapDrawable
+		canvas.concat(super.getImageMatrix());
+		super.getDrawable().draw(canvas);
 		return offscreen;
 	}
 
