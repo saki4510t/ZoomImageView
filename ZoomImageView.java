@@ -607,11 +607,8 @@ public class ZoomImageView extends ImageView {
 	public Bitmap getCurrentImage() {
 		final Bitmap offscreen = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
 		final Canvas canvas = new Canvas(offscreen);
-//		Bitmap image = ((BitmapDrawable)super.getDrawable()).getBitmap();
-//		canvas.drawBitmap(image, super.getImageMatrix(), null);
-//		image.recycle();
 		// modified to support drawables other than BitmapDrawable
-		canvas.concat(super.getImageMatrix());
+		canvas.setMatrix(super.getImageMatrix());
 		super.getDrawable().draw(canvas);
 		return offscreen;
 	}
