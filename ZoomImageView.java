@@ -53,6 +53,7 @@ import android.graphics.ColorFilter;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Matrix;
+import android.graphics.PointF;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
@@ -598,6 +599,34 @@ public class ZoomImageView extends ImageView {
 	 */
 	public OnStartRotationListener getOnStartRotationListener() {
 		return mOnStartRotationListener;
+	}
+	
+	/**
+	 * return current scale
+	 * @return
+	 */
+	public float getScale() {
+		return getMatrixScale();
+	}
+	
+	/**
+	 * return current image translate values(offset)
+	 * @param result
+	 * @return
+	 */
+	public PointF getTranslate(PointF result) {
+		updateMatrixCache();
+		if (result != null) {
+			result.set(mMatrixCache[Matrix.MTRANS_X], mMatrixCache[Matrix.MTRANS_Y]);
+		}
+		return result;
+	}
+	
+	/**
+	 * get current rotating degrees
+	 */
+	public float getRotation() {
+		return mCurrentDegrees;
 	}
 	
 	/**
