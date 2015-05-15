@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				xmlns:tools="http://schemas.android.com/tools"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:paddingLeft="@dimen/activity_horizontal_margin"
+				android:paddingRight="@dimen/activity_horizontal_margin"
+				android:paddingTop="@dimen/activity_vertical_margin"
+				android:paddingBottom="@dimen/activity_vertical_margin"
+				android:orientation="vertical"
+				tools:context=".MainActivity">
+
+	<Button
+		android:id="@+id/camera_button"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="@dimen/half_padding"
+		android:minHeight="@dimen/button_min_height"
+		android:text="@string/icon_from_camera"
+		android:textSize="@dimen/button_font_size" />
+
+	<Button
+		android:id="@+id/gallery_button"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="@dimen/half_padding"
+		android:minHeight="@dimen/button_min_height"
+		android:text="@string/icon_from_gallery"
+		android:textSize="@dimen/button_font_size" />
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_margin="@dimen/standard_padding"
+		android:background="@drawable/frame">
+
+		<com.serenegiant.widget.ZoomImageView
+			android:id="@+id/imageview"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent" />
+
+	</FrameLayout>
+</LinearLayout>

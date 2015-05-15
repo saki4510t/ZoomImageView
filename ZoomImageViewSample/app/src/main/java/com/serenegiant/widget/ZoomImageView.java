@@ -250,7 +250,7 @@ public class ZoomImageView extends ImageView {
 	 */
 	private Runnable mStartCheckRotate;
 	/**
-	 * Runnable instcance to wait restoring the image color
+	 * Runnable instance to wait restoring the image color
 	 */
 	private Runnable mWaitReverseReset;
 	
