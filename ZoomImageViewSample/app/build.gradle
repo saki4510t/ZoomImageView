@@ -1,12 +1,19 @@
 apply plugin: 'com.android.application'
 
 android {
-	compileSdkVersion 22
-	buildToolsVersion "22.0.1"
+	compileSdkVersion versionCompiler
+	buildToolsVersion versionBuildTool
+
+	compileOptions {
+		sourceCompatibility javaSourceCompatibility
+		targetCompatibility javaTargetCompatibility
+	}
+
 	defaultConfig {
+		minSdkVersion 14
+		targetSdkVersion versionTarget
+
 		applicationId "com.serenegiant.zoomimageviewsample"
-		minSdkVersion 10
-		targetSdkVersion 22
 		versionCode 1
 		versionName "1.0"
 	}
@@ -21,5 +28,5 @@ android {
 }
 
 dependencies {
-	compile fileTree(dir: 'libs', include: ['*.jar'])
+	implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
