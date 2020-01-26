@@ -2,7 +2,7 @@ package com.serenegiant.utils;
 
 /*
  * ZoomingImageView for Android:
- * Copyright(c) 2014-2015 t_saki@serenegiant.com
+ * Copyright(c) 2014-2020 t_saki@serenegiant.com
  *
  * This class extends ImageView to support zooming/draging/rotating of image with touch.
  * You can replace usual ImageView with this class.
