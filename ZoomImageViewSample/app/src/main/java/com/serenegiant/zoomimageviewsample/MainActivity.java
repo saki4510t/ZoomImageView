@@ -41,8 +41,9 @@ import com.serenegiant.utils.CameraIntentHelper;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 	private static final boolean DEBUG = false;
 	private static final String TAG = "MainActivity";
 
@@ -91,6 +92,7 @@ public class MainActivity extends Activity {
 	@Override
 	public void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
 		if (DEBUG) Log.v(TAG, "onActivityResult:" + resultCode + ",intent=" + data);
+		super.onActivityResult(requestCode, resultCode, data);
 		if (resultCode != Activity.RESULT_OK) {
 			// if failed/canceled to take/select photo
 

@@ -69,10 +69,12 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.ImageView;
 
+import androidx.appcompat.widget.AppCompatImageView;
+
 /**
  * ImageView with zooming/dragging/rotating image with touch
  */
-public class ZoomImageView extends ImageView {
+public class ZoomImageView extends AppCompatImageView {
 	
 	private static final boolean DEBUG = false;	// TODO for debugging
 	private static final String TAG = "ZoomImageView";

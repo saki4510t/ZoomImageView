@@ -28,6 +28,16 @@ ext {
 
 	versionBuildTool = "29.0.2"
 	versionCompiler = 29
-	// versionTarget=28にしたいけどAndroid10がUVC機器へアクセスできない
 	versionTarget = 28
+
+	// variable that can be referenced to keep support libs consistent
+	supportLibVersion = '1.0.0'
+	androidXVersion = '1.1.0'
+	androidXLegacyV4 = '1.0.0'
+	androidXLifecycle = '2.2.0'
+	androidXLifecycleExt = '2.1.0'
+	androidXPreference = '1.1.0'
+	androidXRecyclerview = '1.1.0'
+	androidXExif = '1.1.0'
+	constraintLibVersion = '1.1.3'
 }
