@@ -73,10 +73,10 @@ public class MainActivity extends Activity {
 		if (savedInstanceState != null) {
 			mUri = savedInstanceState.getParcelable("URI");
 		}
-		mImageView = (ImageView)findViewById(R.id.imageview);
-		Button button = (Button)findViewById(R.id.camera_button);
+		mImageView = findViewById(R.id.imageview);
+		Button button = findViewById(R.id.camera_button);
 		button.setOnClickListener(mOnClickListener);
-		button = (Button)findViewById(R.id.gallery_button);
+		button = findViewById(R.id.gallery_button);
 		button.setOnClickListener(mOnClickListener);
 		mImageView.setImageURI(mUri);
 	}
@@ -140,7 +140,9 @@ public class MainActivity extends Activity {
 //				if (requestCode == REQUEST_CAMERA_GET_IMAGE)
 //					cr.delete(resultUri, null, null);
 			} catch (final FileNotFoundException e) {
+				Log.w(TAG, e);
 			} catch (final IOException e) {
+				Log.w(TAG, e);
 			}
 		}
 		if (DEBUG) Log.v(TAG, "onActivityResult:result=" + resultUri + " bitmap=" + mBitmap);
